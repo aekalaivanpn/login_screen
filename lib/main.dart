@@ -71,7 +71,6 @@ class _LoginDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       padding: EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 0.0),
       child: Column(
         children: [
@@ -111,54 +110,72 @@ class _LoginDetails extends StatelessWidget {
             ),
           ),
           SizedBox(height: 40),
-          Container(
-            height: 50.0,
-            child: Material(
-              borderRadius: BorderRadius.circular(20.0),
-              shadowColor: Colors.blueAccent,
-              color: Colors.blue,
-              elevation: 8.0,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/home');
-                },
-                child: Center(
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17.5,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          _LoginButton(),
           SizedBox(height: 40),
-          Container(
-            height: 50.0,
-            child: Material(
-              borderRadius: BorderRadius.circular(20.0),
-              shadowColor: Colors.blueAccent,
-              color: Colors.blue,
-              elevation: 8.0,
-              child: GestureDetector(
-                onTap: () {},
-                child: Center(
-                  child: Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17.5,
-                    ),
-                  ),
-                ),
+          _SignupButton(),
+        ],
+      ),
+    );
+  }
+}
+
+class _LoginButton extends StatelessWidget {
+  const _LoginButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/home');
+      },
+      child: Container(
+        height: 50.0,
+        child: Material(
+          borderRadius: BorderRadius.circular(20.0),
+          shadowColor: Colors.blueAccent,
+          color: Colors.blue,
+          elevation: 8.0,
+          child: Center(
+            child: Text(
+              'LOGIN',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 17.5,
               ),
             ),
           ),
-        ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SignupButton extends StatelessWidget {
+  const _SignupButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 50.0,
+        child: Material(
+          borderRadius: BorderRadius.circular(20.0),
+          shadowColor: Colors.blueAccent,
+          color: Colors.blue,
+          elevation: 8.0,
+          child: Center(
+            child: Text(
+              'SIGNUP',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 17.5,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
