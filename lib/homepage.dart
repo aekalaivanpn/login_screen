@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
+import 'package:login_screen/loginpage.dart';
+import 'package:login_screen/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,6 +12,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final logindata = GetStorage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +33,12 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(height: 500),
           Container(
+            padding: EdgeInsets.only(left: 50.0, right: 50.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                logindata.write('isLoggedIn', false);
+                Get.offAll(LoginPage());
+              },
               child: Container(
                 height: 50.0,
                 child: Material(
