@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StartingPage(),
+      home: const StartingPage(),
     );
   }
 }
@@ -49,7 +48,7 @@ class _StartingPageState extends State<StartingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Center(
           child: CircularProgressIndicator(),
@@ -59,8 +58,8 @@ class _StartingPageState extends State<StartingPage> {
   }
   void checkifloggedin() {
     logindata.read('isLoggedIn')
-        ? Get.offAll(HomePage())
-        : Get.offAll(LoginPage());
+        ? Get.offAll(() => const HomePage())
+        : Get.offAll(() => const LoginPage());
   }
 
 }

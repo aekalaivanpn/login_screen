@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -26,8 +25,8 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(120.0, 50.0, 120.0, 0.0),
-              child: CircleAvatar(
+              padding: const EdgeInsets.fromLTRB(120.0, 50.0, 120.0, 0.0),
+              child: const CircleAvatar(
                 radius: 65,
                 backgroundImage: NetworkImage(
                     'https://cdn.designcrowd.com/blog/2015/December/top-100-brands-theme-blue-logos/12_HP_400.png'),
@@ -35,10 +34,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 0.0),
               child: Column(
                 children: [
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'USERNAME',
                       labelStyle: TextStyle(
@@ -47,8 +46,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 25.0),
-                  TextField(
+                  const SizedBox(height: 25.0),
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'PASSWORD',
                       labelStyle: TextStyle(
@@ -58,11 +57,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
-                    alignment: Alignment(1.0, 0.0),
-                    padding: EdgeInsets.only(left: 20.0, top: 15.0),
-                    child: InkWell(
+                    alignment: const Alignment(1.0, 0.0),
+                    padding: const EdgeInsets.only(left: 20.0, top: 15.0),
+                    child: const InkWell(
                       child: Text(
                         'Forgot Password',
                         style: TextStyle(
@@ -73,11 +72,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   GestureDetector(
                     onTap: () {
                       logindata.write('isLoggedIn', true);
-                      Get.offAll(HomePage());
+                      Get.offAll(() => const HomePage());
                     },
                     child: Container(
                       height: 50.0,
@@ -86,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                         shadowColor: Colors.blueAccent,
                         color: Colors.blue,
                         elevation: 8.0,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'LOGIN',
                             style: TextStyle(
@@ -99,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
@@ -109,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                         shadowColor: Colors.blueAccent,
                         color: Colors.blue,
                         elevation: 8.0,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'SIGNUP',
                             style: TextStyle(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
 import 'package:login_screen/loginpage.dart';
-import 'package:login_screen/main.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,23 +21,21 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            child: Text('Home Page',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.blueAccent,
-                decoration: TextDecoration.underline,
-              ),
+          const Text('WELCOME',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.blueAccent,
+              decoration: TextDecoration.underline,
             ),
           ),
-          SizedBox(height: 500),
+          const SizedBox(height: 450),
           Container(
-            padding: EdgeInsets.only(left: 50.0, right: 50.0),
+            padding: const EdgeInsets.only(left: 50.0, right: 50.0),
             child: GestureDetector(
               onTap: () {
                 logindata.write('isLoggedIn', false);
-                Get.offAll(LoginPage());
+                Get.offAll(() => const LoginPage());
               },
               child: Container(
                 height: 50.0,
@@ -46,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 shadowColor: Colors.blueAccent,
                 color: Colors.blue,
                 elevation: 8.0,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'LOGOUT',
                       style: TextStyle(
