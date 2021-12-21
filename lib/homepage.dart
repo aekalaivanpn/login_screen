@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Text('WELCOME',
+          const Text('WELCOME!!!',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.bold,
